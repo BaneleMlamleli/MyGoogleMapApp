@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
 import {} from 'googlemaps';
 import { ViewChild, ElementRef, NgZone } from '@angular/core';
@@ -11,6 +11,7 @@ import { ViewChild, ElementRef, NgZone } from '@angular/core';
 export class AppComponent {
   title = 'MyGoogleMapApp';
   @ViewChild('search') public searchElement: ElementRef;
+  place: any;
 
   constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
 
@@ -19,14 +20,26 @@ export class AppComponent {
     this.mapsAPILoader.load().then(() => {
       const autocomplete = new google.maps.places.Autocomplete(this.searchElement.nativeElement, { types: ['address'] });
 
+
       autocomplete.addListener('place_changed', () => {
         this.ngZone.run(() => {
           const place: google.maps.places.PlaceResult = autocomplete.getPlace();
+          // Check if the entered address correspond to an existing address
+          console.log(place);
           if (place.geometry === undefined || place.geometry === null ) {
-            return;
+            // return;
+            console.log('Place unknown!!');
+          } else {
+            console.log('Search value: ' + place.formatted_address);
+            console.log('Address components: ' + place.address_components);
           }
         });
       });
     });
   }
+
 }
+/*
+name: "29 Indlovu St"
+vicinity: "Mfuleni"
+*/
