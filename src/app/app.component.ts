@@ -30,12 +30,10 @@ export class AppComponent {
             // return;
             console.log('Sorry address not found. Please enter manually!');
           } else {
-            console.log('Search value: ' + place.formatted_address);
-            console.log('Address components: ' + place.address_components);
-            console.log('Geometry location: ' + place.geometry.location);
-            // for(let a = 0; a < place.address_components.length; a++) {
-            //   console.log('Value ' + a + ': ' + place.address_components);
-            // }
+            console.log('Search value: ' + place.formatted_address);  //gives an address in readable format
+            console.log('Geometry location: ' + place.geometry.location); //gives coordinates of the selected address
+            //now,  I need to display the individual components of the address
+            console.log('place.address_components.values(): ' + place.address_components.values());
           }
         });
       });
