@@ -32,30 +32,28 @@ export class AppComponent {
           } else {
             console.log('Search value: ' + place.formatted_address);
             console.log('Geometry location: ' + place.geometry.location);
+            console.log('Vicinity: ' + place.vicinity);
           }
           const thearray: any [] = place.address_components;
           thearray.forEach( component => {
               const types: Array<String> = component.types;
               if (types.includes('street_number')) {
-                console.log(component.long_name);
+                console.log('street_number: ' + component.long_name);
               }
               if (types.includes('route')) {
-                console.log(component.long_name);
-              }
-              if (types.includes('sublocality')) {
-                console.log(component.long_name);
+                console.log('route: ' + component.long_name);
               }
               if (types.includes('locality')) {
-                console.log(component.long_name);
+                console.log + ('locality: ' + component.long_name);
               }
-              if (types.includes('political')) {
-                console.log(component.long_name);
+              if (types.includes('administrative_area_level_2')) {
+                console.log('administrative_area_level_2: ' + component.long_name);
               }
               if (types.includes('administrative_area_level_1') ) {
-                console.log(component.long_name);
+                console.log('administrative_area_level_1: ' + component.long_name);
               }
               if (types.includes('postal_code')) {
-                console.log(component.long_name);
+                console.log('postal_code: ' + component.long_name);
               }
           });
 
