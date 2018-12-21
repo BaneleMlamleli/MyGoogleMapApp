@@ -36,25 +36,25 @@ export class AppComponent {
           const thearray: any [] = place.address_components;
           thearray.forEach( component => {
               const types: Array<String> = component.types;
-              if (types.includes('street_number')){
+              if (types.includes('street_number')) {
                 console.log(component.long_name);
               }
-              if (types.includes('route')){
+              if (types.includes('route')) {
                 console.log(component.long_name);
               }
-              if (types.includes('locality')){
+              if (types.includes('sublocality')) {
                 console.log(component.long_name);
               }
-              if (types.includes('political')){
+              if (types.includes('locality')) {
                 console.log(component.long_name);
               }
-              if (types.includes('administrative_area_level_2')){
+              if (types.includes('political')) {
                 console.log(component.long_name);
               }
-              if (types.includes('administrative_area_level_1')){
+              if (types.includes('administrative_area_level_1') ) {
                 console.log(component.long_name);
               }
-              if (types.includes('postal_code')){
+              if (types.includes('postal_code')) {
                 console.log(component.long_name);
               }
           });
