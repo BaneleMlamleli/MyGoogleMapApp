@@ -31,12 +31,34 @@ export class AppComponent {
             console.log('Sorry address not found. Please enter manually!');
           } else {
             console.log('Search value: ' + place.formatted_address);
-            console.log('Address components: ' + place.address_components);
             console.log('Geometry location: ' + place.geometry.location);
-            // for(let a = 0; a < place.address_components.length; a++) {
-            //   console.log('Value ' + a + ': ' + place.address_components);
-            // }
           }
+          const thearray: any [] = place.address_components;
+          thearray.forEach( component => {
+              const types: Array<String> = component.types;
+              if (types.includes('street_number')){
+                console.log(component.long_name);
+              }
+              if (types.includes('route')){
+                console.log(component.long_name);
+              }
+              if (types.includes('locality')){
+                console.log(component.long_name);
+              }
+              if (types.includes('political')){
+                console.log(component.long_name);
+              }
+              if (types.includes('administrative_area_level_2')){
+                console.log(component.long_name);
+              }
+              if (types.includes('administrative_area_level_1')){
+                console.log(component.long_name);
+              }
+              if (types.includes('postal_code')){
+                console.log(component.long_name);
+              }
+          });
+
         });
       });
     });
