@@ -21,8 +21,26 @@
 <router-outlet></router-outlet> -->
 
 <div class="container">
+
   <h3>Google Maps Places Autocomplete Using Angular 2</h3>
+
   <div class="form-group">
-    <input type="text" placeholder="Search for Location" autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" #search>
+    <input type="text" placeholder="Search for Location" class="form-control" {{street_number}} #search> 
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" [disabled]="true" #house>
+  </div>
+
+  <div class="form-group">
+      <input type="text" class="form-control" [disabled]="true" #vicinity>
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" [disabled]="true" #city>
+  </div>
+  
+  <div class="form-group">
+      <input type="text" class="form-control" [disabled]="true" #areacode>
   </div>
 </div>
