@@ -18,6 +18,7 @@ export class AppComponent {
   administrative_area_level_2: any; //Cape Town
   administrative_area_level_1: any; //Western Cape
   postal_code: any; //7100
+  fieldStatus: any;
 
   constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
 
@@ -51,6 +52,7 @@ export class AppComponent {
               if (types.includes('route')) {
                 console.log('route: ' + component.long_name);
                 this.route = component.long_name;
+
               }
               if (types.includes('locality')) {
                 console.log + ('locality: ' + component.long_name);
@@ -72,6 +74,10 @@ export class AppComponent {
         });
       });
     });
+  }
+
+  setStatus($event){
+    this.fieldStatus = false;
   }
 
 }
