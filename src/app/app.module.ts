@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AgmCoreModule } from '@agm/core';  //add an import for AgmCoreModule.
+import { AgmCoreModule } from '@agm/core';  // add an import for AgmCoreModule.
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { AgmCoreModule } from '@agm/core';  //add an import for AgmCoreModule.
   imports: [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDlJ6_tw-XPv2KjAIwI-zTLtoTm4Lq1HOc',
-      libraries: ["places"]
+      libraries: ['places']
     }),
     BrowserModule,
     AppRoutingModule
